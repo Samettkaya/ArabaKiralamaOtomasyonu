@@ -93,7 +93,7 @@ namespace ArabaKiralamaOtomasyonu
             foreach (Control item in Controls) if (item is ComboBox) item.Text = "";
             CarNewListed();
             pictureBox1.ImageLocation = "";
-            MessageBox.Show("Araba güncelendi", "Başarılı.");
+            MessageBox.Show("Araba güncellendi", "Başarılı.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCarDelete_Click(object sender, EventArgs e)

@@ -29,12 +29,12 @@ namespace ArabaKiralamaOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarAdd));
             this.platetext = new System.Windows.Forms.TextBox();
             this.modelyeartext = new System.Windows.Forms.TextBox();
             this.colortxt = new System.Windows.Forms.TextBox();
             this.kmtext = new System.Windows.Forms.TextBox();
             this.pricetext = new System.Windows.Forms.TextBox();
-            this.fluetext = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@ namespace ArabaKiralamaOtomasyonu
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCarAdd = new System.Windows.Forms.Button();
             this.btnCarCancel = new System.Windows.Forms.Button();
             this.btnImageAdd = new System.Windows.Forms.Button();
@@ -54,6 +53,8 @@ namespace ArabaKiralamaOtomasyonu
             this.brandtext = new System.Windows.Forms.TextBox();
             this.serialnumbertext = new System.Windows.Forms.TextBox();
             this.carnametext = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fluetext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,19 +92,6 @@ namespace ArabaKiralamaOtomasyonu
             this.pricetext.Name = "pricetext";
             this.pricetext.Size = new System.Drawing.Size(163, 20);
             this.pricetext.TabIndex = 7;
-            // 
-            // fluetext
-            // 
-            this.fluetext.FormattingEnabled = true;
-            this.fluetext.Items.AddRange(new object[] {
-            "Dizel",
-            "Benzin",
-            "Benzin +Lpg",
-            "Lpg"});
-            this.fluetext.Location = new System.Drawing.Point(100, 214);
-            this.fluetext.Name = "fluetext";
-            this.fluetext.Size = new System.Drawing.Size(163, 21);
-            this.fluetext.TabIndex = 8;
             // 
             // label1
             // 
@@ -196,16 +184,6 @@ namespace ArabaKiralamaOtomasyonu
             this.label10.TabIndex = 19;
             this.label10.Text = "Araba İsmi";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(287, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 182);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnCarAdd
             // 
             this.btnCarAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
@@ -286,11 +264,31 @@ namespace ArabaKiralamaOtomasyonu
             this.carnametext.Size = new System.Drawing.Size(163, 20);
             this.carnametext.TabIndex = 28;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(287, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(238, 182);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // fluetext
+            // 
+            this.fluetext.Location = new System.Drawing.Point(100, 214);
+            this.fluetext.Name = "fluetext";
+            this.fluetext.Size = new System.Drawing.Size(163, 20);
+            this.fluetext.TabIndex = 29;
+            // 
             // CarAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
             this.ClientSize = new System.Drawing.Size(549, 430);
+            this.Controls.Add(this.fluetext);
             this.Controls.Add(this.carnametext);
             this.Controls.Add(this.serialnumbertext);
             this.Controls.Add(this.brandtext);
@@ -308,13 +306,13 @@ namespace ArabaKiralamaOtomasyonu
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fluetext);
             this.Controls.Add(this.pricetext);
             this.Controls.Add(this.descriptiontxt);
             this.Controls.Add(this.kmtext);
             this.Controls.Add(this.colortxt);
             this.Controls.Add(this.modelyeartext);
             this.Controls.Add(this.platetext);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CarAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Araç Kayıt";
@@ -332,7 +330,6 @@ namespace ArabaKiralamaOtomasyonu
         private System.Windows.Forms.TextBox colortxt;
         private System.Windows.Forms.TextBox kmtext;
         private System.Windows.Forms.TextBox pricetext;
-        private System.Windows.Forms.ComboBox fluetext;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -352,5 +349,6 @@ namespace ArabaKiralamaOtomasyonu
         private System.Windows.Forms.TextBox brandtext;
         private System.Windows.Forms.TextBox serialnumbertext;
         private System.Windows.Forms.TextBox carnametext;
+        private System.Windows.Forms.TextBox fluetext;
     }
 }

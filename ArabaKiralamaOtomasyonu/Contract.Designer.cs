@@ -29,6 +29,7 @@ namespace ArabaKiralamaOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contract));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.licenseLocationTxt = new System.Windows.Forms.TextBox();
             this.licenseDateTxt = new System.Windows.Forms.TextBox();
@@ -94,7 +95,7 @@ namespace ArabaKiralamaOtomasyonu
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(210, 220);
@@ -163,7 +164,7 @@ namespace ArabaKiralamaOtomasyonu
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(0, 190);
+            this.label7.Location = new System.Drawing.Point(1, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 6;
@@ -251,7 +252,7 @@ namespace ArabaKiralamaOtomasyonu
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.colorTxt);
             this.groupBox2.Controls.Add(this.brandTxt);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(233, 8);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(518, 220);
@@ -514,7 +515,7 @@ namespace ArabaKiralamaOtomasyonu
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.dataGridView1.Location = new System.Drawing.Point(3, 234);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 243);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(739, 246);
             this.dataGridView1.TabIndex = 2;
@@ -528,7 +529,7 @@ namespace ArabaKiralamaOtomasyonu
             this.carReturnBtn.FlatAppearance.BorderSize = 0;
             this.carReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carReturnBtn.ForeColor = System.Drawing.Color.White;
-            this.carReturnBtn.Location = new System.Drawing.Point(659, 486);
+            this.carReturnBtn.Location = new System.Drawing.Point(659, 495);
             this.carReturnBtn.Name = "carReturnBtn";
             this.carReturnBtn.Size = new System.Drawing.Size(92, 31);
             this.carReturnBtn.TabIndex = 22;
@@ -540,13 +541,14 @@ namespace ArabaKiralamaOtomasyonu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(763, 525);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
+            this.ClientSize = new System.Drawing.Size(763, 538);
             this.Controls.Add(this.carReturnBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Contract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sözleşme Sayfası";

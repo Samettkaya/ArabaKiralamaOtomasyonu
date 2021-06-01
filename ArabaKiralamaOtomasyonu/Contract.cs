@@ -47,7 +47,6 @@ namespace ArabaKiralamaOtomasyonu
         private void tcTxt_TextChanged(object sender, EventArgs e)
         {
             if (tcTxt.Text == "") foreach (Control item in groupBox1.Controls) if (item is TextBox) item.Text = "";
-            
             string query = "select * from customers where TcNo like '" + tcTxt.Text + "'";
             carRentalDatabase.GetCustomer(tcTxt, firstNameTxt, lastNameTxt, phoneTxt, query);
             
@@ -77,7 +76,8 @@ namespace ArabaKiralamaOtomasyonu
         {
             if (DateTime.Parse(returnDateTimePicker.Text) < DateTime.Parse(rentDateTimePicker.Text))
             {
-                MessageBox.Show("Dönüş tarihi çıkış tarihinden küçük olamaz", "Dikkat!");
+           
+                MessageBox.Show("Dönüş tarihi çıkış tarihinden küçük olamaz", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (DateTime.Parse(returnDateTimePicker.Text) != DateTime.Parse(rentDateTimePicker.Text))
             {
@@ -88,11 +88,13 @@ namespace ArabaKiralamaOtomasyonu
                 dayTxt.Text = days.ToString();
 
                 priceTxt.Text = (days * int.Parse(dailyPriceTxt.Text)).ToString();
-                MessageBox.Show("Fiyat hesaplandı", "Başarılı.");
+               
+                MessageBox.Show("Fiyat hesaplandı", "Başarılı.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Çıkış tarihi ile Dönüş tarihi aynı olamaz", "Dikkat!");
+
+                MessageBox.Show("Çıkış tarihi ile Dönüş tarihi aynı olamaz", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -147,7 +149,9 @@ namespace ArabaKiralamaOtomasyonu
             Updated();
             rentDateTimePicker.Text = DateTime.Now.ToShortDateString();
             returnDateTimePicker.Text = DateTime.Now.ToShortDateString();
-            MessageBox.Show("Kiralama işlemi tamamlandı ","Başarılı");
+
+            MessageBox.Show("Kiralama işlemi tamamlandı ","Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void updatedBtn_Click(object sender, EventArgs e)
@@ -183,7 +187,8 @@ namespace ArabaKiralamaOtomasyonu
             Updated();
             rentDateTimePicker.Text = DateTime.Now.ToShortDateString();
             returnDateTimePicker.Text = DateTime.Now.ToShortDateString();
-            MessageBox.Show("Kiralama işlemi güncellendi","Başarılı");
+          
+            MessageBox.Show("Kiralama işlemi güncellendi ", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -250,12 +255,13 @@ namespace ArabaKiralamaOtomasyonu
             foreach (Control item in groupBox1.Controls) if (item is TextBox) item.Text = "";
             foreach (Control item in groupBox2.Controls) if (item is TextBox) item.Text = "";
           
-            MessageBox.Show("Araç Teslim Edildi","Başarılı");
-            Updated();
+                 MessageBox.Show("Araç Teslim Edildi","Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Updated();
             }
             else
             {
-                MessageBox.Show("Araç teslim etmek için kiralık araç seçmelisiniz", "Dikkat !");
+                MessageBox.Show("Araç teslim etmek için kiralık araç seçmelisiniz", "Dikkat !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

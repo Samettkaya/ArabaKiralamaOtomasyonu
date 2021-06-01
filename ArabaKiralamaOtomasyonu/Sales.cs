@@ -22,6 +22,7 @@ namespace ArabaKiralamaOtomasyonu
 
         private void Sales_Load(object sender, EventArgs e)
         {
+            
             string Query = "select * from sales";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
             dataGridView1.DataSource = carRentalDatabase.Listed(sqlDataAdapter,Query);

@@ -29,6 +29,7 @@ namespace ArabaKiralamaOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsListed));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboCar = new System.Windows.Forms.ComboBox();
             this.btnImageAdd = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@ namespace ArabaKiralamaOtomasyonu
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(284, 54);
             this.dataGridView1.Name = "dataGridView1";
@@ -132,6 +134,7 @@ namespace ArabaKiralamaOtomasyonu
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(90, 347);
             this.pictureBox1.Name = "pictureBox1";
@@ -315,6 +318,7 @@ namespace ArabaKiralamaOtomasyonu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
             this.ClientSize = new System.Drawing.Size(1004, 521);
             this.Controls.Add(this.brandtext);
             this.Controls.Add(this.carnametext);
@@ -342,6 +346,7 @@ namespace ArabaKiralamaOtomasyonu
             this.Controls.Add(this.platetext);
             this.Controls.Add(this.comboCar);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CarsListed";
             this.Text = "Araçlar";
             this.Load += new System.EventHandler(this.CarsListed_Load);

@@ -14,6 +14,7 @@ namespace ArabaKiralamaOtomasyonu
     public partial class CustomerAdd : Form
     {
         CarRentalDatabase carRentalDatabase = new CarRentalDatabase();
+        SqlConnection sqlConnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CarRentalAutomation;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public CustomerAdd()
         {
             InitializeComponent();
@@ -68,28 +69,67 @@ namespace ArabaKiralamaOtomasyonu
         {
 
         }
+        bool durum;
+       void bul()
+        {
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("select * from customers where TcNo=@TcNo ", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@TcNo", txttc.Text);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
+            if (sqlDataReader.Read())
+            {
+                durum = false;
+
+            }
+            else
+            {
+                durum = true;
+            }
+            sqlConnection.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            string sentence = "insert into customers(FirstName,LastName,TcNo,BirthDate,Phone,Email,Address) values(@FirstName,@LastName,@TcNo,@BirthDate,@Phone,@Email,@Address)";
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.Parameters.AddWithValue("@TcNo",txttc.Text);
-            sqlCommand.Parameters.AddWithValue("@FirstName", txtfirstname.Text);
-            sqlCommand.Parameters.AddWithValue("@LastName", txtlastname.Text);
-            sqlCommand.Parameters.AddWithValue("@BirthDate", txtbirthday.Text);
-            sqlCommand.Parameters.AddWithValue("@Phone", txtphone.Text);
-            sqlCommand.Parameters.AddWithValue("@Email", txteposta.Text);
-            sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text);
+            bul();
+            if (durum == true)
+            {
+                string sentence = "insert into customers(FirstName,LastName,TcNo,BirthDate,Phone,Email,Address) values(@FirstName,@LastName,@TcNo,@BirthDate,@Phone,@Email,@Address)";
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Parameters.AddWithValue("@TcNo", txttc.Text);
+                sqlCommand.Parameters.AddWithValue("@FirstName", txtfirstname.Text);
+                sqlCommand.Parameters.AddWithValue("@LastName", txtlastname.Text);
+                sqlCommand.Parameters.AddWithValue("@BirthDate", txtbirthday.Text);
+                sqlCommand.Parameters.AddWithValue("@Phone", txtphone.Text);
+                sqlCommand.Parameters.AddWithValue("@Email", txteposta.Text);
+                sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text);
 
-            carRentalDatabase.Crud(sqlCommand, sentence);
-            foreach (Control item in Controls) if (item is TextBox) item.Text = "";
+                carRentalDatabase.Crud(sqlCommand, sentence);
+                foreach (Control control in Controls) if (control is TextBox) control.Text = "";
 
-            MessageBox.Show("Müşteri Eklendi","Başarılı.");
+                MessageBox.Show("Müşteri Eklendi", "Başarılı.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Bu kayıt zaten var ", "Bilgi.",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                foreach (Control control in Controls) if (control is TextBox) control.Text = "";
+            }
+
+                      
+                   
+               
+            
+           
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtlastname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace ArabaKiralamaOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListed));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnclose = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@ namespace ArabaKiralamaOtomasyonu
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(236, 76);
             this.dataGridView1.Name = "dataGridView1";
@@ -65,6 +67,7 @@ namespace ArabaKiralamaOtomasyonu
             // btnclose
             // 
             this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.ForeColor = System.Drawing.Color.White;
             this.btnclose.Location = new System.Drawing.Point(170, 305);
@@ -77,7 +80,11 @@ namespace ArabaKiralamaOtomasyonu
             // 
             // btnadd
             // 
+            this.btnadd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.btnadd.FlatAppearance.BorderSize = 0;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.ForeColor = System.Drawing.Color.White;
             this.btnadd.Location = new System.Drawing.Point(90, 305);
@@ -204,6 +211,7 @@ namespace ArabaKiralamaOtomasyonu
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(846, 76);
@@ -259,6 +267,7 @@ namespace ArabaKiralamaOtomasyonu
             this.Controls.Add(this.txtfirstname);
             this.Controls.Add(this.txttc);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerListed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Müşteriler ";
