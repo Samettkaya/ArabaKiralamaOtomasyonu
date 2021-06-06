@@ -56,7 +56,7 @@ namespace ArabaKiralamaOtomasyonu
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 51);
+            this.panel1.Size = new System.Drawing.Size(594, 75);
             this.panel1.TabIndex = 0;
             // 
             // button7
@@ -66,11 +66,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(526, 13);
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.Location = new System.Drawing.Point(526, 10);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(52, 23);
+            this.button7.Size = new System.Drawing.Size(52, 55);
             this.button7.TabIndex = 6;
             this.button7.Text = "Çıkış";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -82,11 +85,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(449, 13);
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.Location = new System.Drawing.Point(449, 10);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(75, 55);
             this.button6.TabIndex = 5;
             this.button6.Text = "Satışlar";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -96,11 +102,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(372, 13);
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.Location = new System.Drawing.Point(372, 10);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(75, 55);
             this.button5.TabIndex = 4;
             this.button5.Text = "Sözleşme";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -110,11 +119,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(275, 13);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(275, 10);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 23);
+            this.button4.Size = new System.Drawing.Size(95, 55);
             this.button4.TabIndex = 3;
             this.button4.Text = "Tüm Araçlar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -124,11 +136,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(186, 13);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(186, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 23);
+            this.button3.Size = new System.Drawing.Size(87, 55);
             this.button3.TabIndex = 2;
             this.button3.Text = "Araç Ekle";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -138,25 +153,32 @@ namespace ArabaKiralamaOtomasyonu
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(90, 13);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(90, 10);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 23);
+            this.button2.Size = new System.Drawing.Size(90, 55);
             this.button2.TabIndex = 1;
             this.button2.Text = "Tüm Müşteriler";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(13, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 55);
             this.button1.TabIndex = 0;
             this.button1.Text = "Müşteri Ekle";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -165,7 +187,7 @@ namespace ArabaKiralamaOtomasyonu
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
-            this.BackgroundImage = global::ArabaKiralamaOtomasyonu.Properties.Resources.slider;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(593, 338);
             this.Controls.Add(this.panel1);

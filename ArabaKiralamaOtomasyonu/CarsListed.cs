@@ -155,6 +155,33 @@ else if( comboCar.SelectedIndex == 1)
         {
 
         }
+
+  
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dataGridViewRow = dataGridView1.CurrentRow;
+            string CustomerDelete = "delete from cars where serialNumber='" + dataGridViewRow.Cells[3].Value.ToString() + "'";
+            SqlCommand Delete = new SqlCommand();
+            carRentalDatabase.Crud(Delete, CustomerDelete);
+            foreach (Control item in Controls) if (item is TextBox) item.Text = "";
+            CarNewListed();
+
+            MessageBox.Show("Araba silindi", "Başarılı.");
+        }
+
+        private void car_search_TextChanged(object sender, EventArgs e)
+        {
+            
+            string CarsListed = "select * from cars where serialnumber like'" + car_search.Text + "%'";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            dataGridView1.DataSource = carRentalDatabase.Listed(sqlDataAdapter, CarsListed);
+        }
+
+        private void car_search_Click(object sender, EventArgs e)
+        {
+            car_search.Clear();
+        }
     }
 }
 

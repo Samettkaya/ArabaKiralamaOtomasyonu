@@ -70,11 +70,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnclose.Location = new System.Drawing.Point(170, 305);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 25);
             this.btnclose.TabIndex = 31;
             this.btnclose.Text = "İptal";
+            this.btnclose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
@@ -87,11 +90,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnadd.FlatAppearance.BorderSize = 0;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.Location = new System.Drawing.Point(90, 305);
+            this.btnadd.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.Image")));
+            this.btnadd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnadd.Location = new System.Drawing.Point(84, 305);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(62, 25);
+            this.btnadd.Size = new System.Drawing.Size(80, 25);
             this.btnadd.TabIndex = 30;
             this.btnadd.Text = "Güncelle";
+            this.btnadd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnUpdated_Click);
             // 
@@ -214,11 +220,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(846, 76);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(35, 25);
+            this.btnDelete.Size = new System.Drawing.Size(40, 25);
             this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -228,9 +237,9 @@ namespace ArabaKiralamaOtomasyonu
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.Location = new System.Drawing.Point(689, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 34;
-            this.label8.Text = "T.C.";
+            this.label8.Text = "T.C";
             // 
             // tc_search
             // 
@@ -239,6 +248,8 @@ namespace ArabaKiralamaOtomasyonu
             this.tc_search.Name = "tc_search";
             this.tc_search.Size = new System.Drawing.Size(118, 20);
             this.tc_search.TabIndex = 33;
+            this.tc_search.Text = "Arama yapınız";
+            this.tc_search.Click += new System.EventHandler(this.tc_search_Click);
             this.tc_search.TextChanged += new System.EventHandler(this.tc_search_TextChanged);
             // 
             // CustomerListed

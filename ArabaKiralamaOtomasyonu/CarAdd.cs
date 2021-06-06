@@ -13,7 +13,7 @@ namespace ArabaKiralamaOtomasyonu
 {
     public partial class CarAdd : Form
     {
-        CarRentalDatabaseLocal carRentalDatabaseLocal = new CarRentalDatabaseLocal();
+        CarRentalDatabase carRentalDatabaseLocal = new CarRentalDatabase();
         SqlConnection sqlConnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CarRentalAutomation;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         CarRentalDatabase carRentalDatabase = new CarRentalDatabase();
@@ -43,8 +43,9 @@ namespace ArabaKiralamaOtomasyonu
            
            
         }
-        bool durum;
-        void bul()
+        bool plateNoFinds;
+        bool serialNoFinds;
+        void plateNoFind()
         {
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("select * from cars where PlateNo=@PlateNo ", sqlConnection);
@@ -53,21 +54,41 @@ namespace ArabaKiralamaOtomasyonu
 
             if (sqlDataReader.Read())
             {
-                durum = false;
+                plateNoFinds = false;
 
             }
             else
             {
-                durum = true;
+                plateNoFinds = true;
+            }
+            sqlConnection.Close();
+        }
+
+        void serialNoFind()
+        {
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("select * from cars where SerialNumber =@SerialNumber ", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@SerialNumber", platetext.Text);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            if (sqlDataReader.Read())
+            {
+                serialNoFinds = false;
+
+            }
+            else
+            {
+                serialNoFinds = true;
             }
             sqlConnection.Close();
         }
         private void btnCarAdd_Click(object sender, EventArgs e)
         {
-            bul();
-            if (durum == true)
+            plateNoFind();
+            serialNoFind();
+            if (plateNoFinds == true)
             {
-                SqlConnection sqlConnection = new SqlConnection(carRentalDatabaseLocal.Adres);
+
                 string sentence = "insert into cars(PlateNo,BrandName,CarName,SerialNumber,ModelYear,ColorName,Km,Fuel,DailyPrice,Description,Image,Date,Status) values(@PlateNo,@BrandName,@CarName,@SerialNumber,@ModelYear,@ColorName,@Km,@Fuel,@DailyPrice,@Description,@Image,@Date,@Status)";
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Parameters.AddWithValue("@PlateNo", platetext.Text);
@@ -90,6 +111,10 @@ namespace ArabaKiralamaOtomasyonu
                 foreach (Control item in Controls) if (item is ComboBox) item.Text = "";
                 pictureBox1.ImageLocation = "";
                 MessageBox.Show("Araba eklendi ", "Başarılı.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (serialNoFinds == false)
+            {
+                MessageBox.Show(serialnumbertext.Text+" numarasına ait araba zaten var ", "Bilgi.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

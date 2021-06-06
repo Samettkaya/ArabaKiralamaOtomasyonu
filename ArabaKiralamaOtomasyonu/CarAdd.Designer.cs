@@ -192,11 +192,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnCarAdd.FlatAppearance.BorderSize = 0;
             this.btnCarAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarAdd.ForeColor = System.Drawing.Color.White;
-            this.btnCarAdd.Location = new System.Drawing.Point(157, 373);
+            this.btnCarAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCarAdd.Image")));
+            this.btnCarAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarAdd.Location = new System.Drawing.Point(138, 373);
             this.btnCarAdd.Name = "btnCarAdd";
-            this.btnCarAdd.Size = new System.Drawing.Size(50, 25);
+            this.btnCarAdd.Size = new System.Drawing.Size(56, 25);
             this.btnCarAdd.TabIndex = 21;
             this.btnCarAdd.Text = "Ekle";
+            this.btnCarAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCarAdd.UseVisualStyleBackColor = false;
             this.btnCarAdd.Click += new System.EventHandler(this.btnCarAdd_Click);
             // 
@@ -208,11 +211,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnCarCancel.FlatAppearance.BorderSize = 0;
             this.btnCarCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCarCancel.Location = new System.Drawing.Point(213, 373);
+            this.btnCarCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCarCancel.Image")));
+            this.btnCarCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarCancel.Location = new System.Drawing.Point(200, 373);
             this.btnCarCancel.Name = "btnCarCancel";
-            this.btnCarCancel.Size = new System.Drawing.Size(50, 25);
+            this.btnCarCancel.Size = new System.Drawing.Size(56, 25);
             this.btnCarCancel.TabIndex = 22;
             this.btnCarCancel.Text = "İptal";
+            this.btnCarCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCarCancel.UseVisualStyleBackColor = false;
             this.btnCarCancel.Click += new System.EventHandler(this.btnCarCancel_Click);
             // 

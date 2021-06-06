@@ -57,6 +57,9 @@ namespace ArabaKiralamaOtomasyonu
             this.serialnumbertext = new System.Windows.Forms.TextBox();
             this.carnametext = new System.Windows.Forms.TextBox();
             this.brandtext = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.car_search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +70,7 @@ namespace ArabaKiralamaOtomasyonu
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(284, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(708, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 445);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -108,11 +111,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnCarCancel.FlatAppearance.BorderSize = 0;
             this.btnCarCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCarCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCarCancel.Image")));
+            this.btnCarCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCarCancel.Location = new System.Drawing.Point(203, 474);
             this.btnCarCancel.Name = "btnCarCancel";
             this.btnCarCancel.Size = new System.Drawing.Size(50, 25);
             this.btnCarCancel.TabIndex = 46;
             this.btnCarCancel.Text = "İptal";
+            this.btnCarCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCarCancel.UseVisualStyleBackColor = false;
             this.btnCarCancel.Click += new System.EventHandler(this.btnCarCancel_Click);
             // 
@@ -124,11 +130,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnCarAdd.FlatAppearance.BorderSize = 0;
             this.btnCarAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarAdd.ForeColor = System.Drawing.Color.White;
-            this.btnCarAdd.Location = new System.Drawing.Point(128, 474);
+            this.btnCarAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCarAdd.Image")));
+            this.btnCarAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarAdd.Location = new System.Drawing.Point(123, 474);
             this.btnCarAdd.Name = "btnCarAdd";
-            this.btnCarAdd.Size = new System.Drawing.Size(69, 25);
+            this.btnCarAdd.Size = new System.Drawing.Size(74, 25);
             this.btnCarAdd.TabIndex = 45;
             this.btnCarAdd.Text = "Güncelle";
+            this.btnCarAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCarAdd.UseVisualStyleBackColor = false;
             this.btnCarAdd.Click += new System.EventHandler(this.btnCarAdd_Click);
             // 
@@ -314,12 +323,50 @@ namespace ArabaKiralamaOtomasyonu
             this.brandtext.Size = new System.Drawing.Size(163, 20);
             this.brandtext.TabIndex = 50;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(998, 55);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(35, 25);
+            this.btnDelete.TabIndex = 52;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(281, 32);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 54;
+            this.label11.Text = "Seri No";
+            // 
+            // car_search
+            // 
+            this.car_search.Location = new System.Drawing.Point(336, 29);
+            this.car_search.Name = "car_search";
+            this.car_search.ShortcutsEnabled = false;
+            this.car_search.Size = new System.Drawing.Size(128, 20);
+            this.car_search.TabIndex = 53;
+            this.car_search.Text = "Arama yapınız";
+            this.car_search.Click += new System.EventHandler(this.car_search_Click);
+            this.car_search.TextChanged += new System.EventHandler(this.car_search_TextChanged);
+            // 
             // CarsListed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
-            this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.ClientSize = new System.Drawing.Size(1057, 521);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.car_search);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.brandtext);
             this.Controls.Add(this.carnametext);
             this.Controls.Add(this.serialnumbertext);
@@ -386,5 +433,8 @@ namespace ArabaKiralamaOtomasyonu
         private System.Windows.Forms.TextBox serialnumbertext;
         private System.Windows.Forms.TextBox carnametext;
         private System.Windows.Forms.TextBox brandtext;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox car_search;
     }
 }

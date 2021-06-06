@@ -94,7 +94,6 @@
       <DependentUpon>CarAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="CarRentalDatabase.cs" />
-    <Compile Include="CarRentalDatabaseLocal.cs" />
     <Compile Include="CarsListed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +178,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\slider.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -214,16 +210,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user-add-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\216373-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\216373-24 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconfinder_user_add_48810.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

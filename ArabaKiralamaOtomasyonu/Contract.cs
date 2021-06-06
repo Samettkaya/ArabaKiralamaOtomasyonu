@@ -26,9 +26,37 @@ namespace ArabaKiralamaOtomasyonu
         private void Contract_Load(object sender, EventArgs e)
         {
             EmptyCars();
-
             Updated();
+            NewListed();
         }
+
+        private void NewListed()
+        {
+            string CustomerListed = "select TcNo,FirstName,LastName,Phone,LicenseNO,LicenseDate,LicenseLocation,PlateNo,BrandName,ColorName,SerialNumber,DailyPrice,Day,RentPrice,RentDate,ReturnDate,ModelYear,CarName from Contracts";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            dataGridView1.DataSource = carRentalDatabase.Listed(sqlDataAdapter, CustomerListed);
+            dataGridView1.Columns[0].HeaderText = "T.C.";
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "Telefon";
+            dataGridView1.Columns[4].HeaderText = "Ehliyet No";
+            dataGridView1.Columns[5].HeaderText = "Ehliyet Tarihi";
+            dataGridView1.Columns[6].HeaderText = "Ehliyet Verildiği Yer";
+            dataGridView1.Columns[7].HeaderText = "Plaka";
+            dataGridView1.Columns[8].HeaderText = "Marka";
+            dataGridView1.Columns[9].HeaderText = "Renk";
+            dataGridView1.Columns[10].HeaderText = "Seri No";
+            dataGridView1.Columns[11].HeaderText = "Günlük Fiyat";
+            dataGridView1.Columns[12].HeaderText = "Gün";
+            dataGridView1.Columns[13].HeaderText = "Kira Ücreti";
+            dataGridView1.Columns[14].HeaderText = "Çıkış Tarih";
+            dataGridView1.Columns[15].HeaderText = "Dönüş Tarihi";
+            dataGridView1.Columns[16].HeaderText = "Model Yıl";
+            dataGridView1.Columns[17].HeaderText = "Araba";
+
+        }
+
+
 
         private void EmptyCars()
         {
@@ -74,10 +102,19 @@ namespace ArabaKiralamaOtomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DateTime bugun = DateTime.Now;
             if (DateTime.Parse(returnDateTimePicker.Text) < DateTime.Parse(rentDateTimePicker.Text))
             {
-           
+
                 MessageBox.Show("Dönüş tarihi çıkış tarihinden küçük olamaz", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                rentDateTimePicker.Text = DateTime.Now.ToShortDateString();
+                returnDateTimePicker.Text = DateTime.Now.ToShortDateString();
+            }
+            else if (DateTime.Parse(rentDateTimePicker.Text)  <bugun)
+            {
+                MessageBox.Show("Çıkış tarihi şimdiki tarihten küçük olamaz", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                rentDateTimePicker.Text = DateTime.Now.ToShortDateString();
+                returnDateTimePicker.Text = DateTime.Now.ToShortDateString();
             }
             else if (DateTime.Parse(returnDateTimePicker.Text) != DateTime.Parse(rentDateTimePicker.Text))
             {
@@ -127,7 +164,7 @@ namespace ArabaKiralamaOtomasyonu
             sqlCommand.Parameters.AddWithValue("@LicenseLocation", licenseLocationTxt.Text);
             sqlCommand.Parameters.AddWithValue("@PlateNo", plateNoTxt.Text);
             sqlCommand.Parameters.AddWithValue("@BrandName", brandTxt.Text);
-            sqlCommand.Parameters.AddWithValue("@ColorName", carNameCombo.Text);
+            sqlCommand.Parameters.AddWithValue("@ColorName", colorTxt.Text);
             sqlCommand.Parameters.AddWithValue("@SerialNumber", serialNoTxt.Text);          
             sqlCommand.Parameters.AddWithValue("@DailyPrice", int.Parse(dailyPriceTxt.Text));
             sqlCommand.Parameters.AddWithValue("@ModelYear", modelYılTxt.Text);
@@ -147,6 +184,7 @@ namespace ArabaKiralamaOtomasyonu
             foreach (Control item in groupBox1.Controls) if (item is TextBox) item.Text = "";
             foreach (Control item in groupBox2.Controls) if (item is TextBox) item.Text = "";
             Updated();
+            EmptyCars();
             rentDateTimePicker.Text = DateTime.Now.ToShortDateString();
             returnDateTimePicker.Text = DateTime.Now.ToShortDateString();
 
@@ -195,26 +233,33 @@ namespace ArabaKiralamaOtomasyonu
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow dataGridViewRow = dataGridView1.CurrentRow;
-            tcTxt.Text = dataGridViewRow.Cells[1].Value.ToString();
-            firstNameTxt.Text = dataGridViewRow.Cells[2].Value.ToString();
-            lastNameTxt.Text = dataGridViewRow.Cells[3].Value.ToString();
-            phoneTxt.Text = dataGridViewRow.Cells[4].Value.ToString();
-            licenseNoTxt.Text = dataGridViewRow.Cells[5].Value.ToString();
-            licenseDateTxt.Text = dataGridViewRow.Cells[6].Value.ToString();
-            licenseLocationTxt.Text = dataGridViewRow.Cells[7].Value.ToString();
-            plateNoTxt.Text = dataGridViewRow.Cells[8].Value.ToString();
-            brandTxt.Text = dataGridViewRow.Cells[9].Value.ToString();
-            colorTxt.Text = dataGridViewRow.Cells[10].Value.ToString();
-            serialNoTxt.Text = dataGridViewRow.Cells[11].Value.ToString();
-            dailyPriceTxt.Text = dataGridViewRow.Cells[12].Value.ToString();
-            dayTxt.Text = dataGridViewRow.Cells[13].Value.ToString();
-            priceTxt.Text = dataGridViewRow.Cells[14].Value.ToString();
-            rentDateTimePicker.Text = dataGridViewRow.Cells[15].Value.ToString();
-            returnDateTimePicker.Text = dataGridViewRow.Cells[16].Value.ToString();
-            modelYılTxt.Text = dataGridViewRow.Cells[17].Value.ToString();
-            carNameCombo.Text = dataGridViewRow.Cells[18].Value.ToString();
+            tcTxt.Text = dataGridViewRow.Cells[0].Value.ToString();
+            firstNameTxt.Text = dataGridViewRow.Cells[1].Value.ToString();
+            lastNameTxt.Text = dataGridViewRow.Cells[2].Value.ToString();
+            phoneTxt.Text = dataGridViewRow.Cells[3].Value.ToString();
+            licenseNoTxt.Text = dataGridViewRow.Cells[4].Value.ToString();
+            licenseDateTxt.Text = dataGridViewRow.Cells[5].Value.ToString();
+            licenseLocationTxt.Text = dataGridViewRow.Cells[6].Value.ToString();
+            plateNoTxt.Text = dataGridViewRow.Cells[7].Value.ToString();
+            brandTxt.Text = dataGridViewRow.Cells[8].Value.ToString();
+            colorTxt.Text = dataGridViewRow.Cells[9].Value.ToString();
+            serialNoTxt.Text = dataGridViewRow.Cells[10].Value.ToString();
+            dailyPriceTxt.Text = dataGridViewRow.Cells[11].Value.ToString();
+            dayTxt.Text = dataGridViewRow.Cells[12].Value.ToString();
+            priceTxt.Text = dataGridViewRow.Cells[13].Value.ToString();
+            rentDateTimePicker.Text = dataGridViewRow.Cells[14].Value.ToString();
+            returnDateTimePicker.Text = dataGridViewRow.Cells[15].Value.ToString();
+            modelYılTxt.Text = dataGridViewRow.Cells[16].Value.ToString();
+            carNameCombo.Text = dataGridViewRow.Cells[17].Value.ToString();
 
             tcTxt.Enabled = false;
+
+
+     
+
+
+
+
         }
 
         private void carReturnBtn_Click(object sender, EventArgs e)
@@ -269,7 +314,7 @@ namespace ArabaKiralamaOtomasyonu
         {
             if (licenseNoTxt.Text == "") foreach (Control item in groupBox1.Controls) if (item is TextBox) item.Text = "";
 
-            string query = "select * from contracts where LicenseNo like '" + licenseNoTxt.Text + "'";
+            string query = "select * from contracts where LicenseNo like'"+licenseNoTxt.Text + "'";
             carRentalDatabase.GetLicense(licenseNoTxt, licenseDateTxt, licenseLocationTxt, query);
         }
 

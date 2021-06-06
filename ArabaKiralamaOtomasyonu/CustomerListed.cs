@@ -45,7 +45,7 @@ namespace ArabaKiralamaOtomasyonu
 
         private void tc_search_TextChanged(object sender, EventArgs e)
         {
-            string CustomerListed = "select * from customers where TcNo like'"+tc_search.Text+"%'";
+            string CustomerListed = "select TcNo,FirstName,LastName,BirthDate,Phone,Email,Address from customers where TcNo like'" + tc_search.Text+"%'";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();          
             dataGridView1.DataSource = carRentalDatabase.Listed(sqlDataAdapter, CustomerListed);
         }
@@ -97,6 +97,11 @@ namespace ArabaKiralamaOtomasyonu
             NewListed();
 
             MessageBox.Show("Müşteri silindi", "Başarılı.");
+        }
+
+        private void tc_search_Click(object sender, EventArgs e)
+        {
+           tc_search.Clear();
         }
     }
 }

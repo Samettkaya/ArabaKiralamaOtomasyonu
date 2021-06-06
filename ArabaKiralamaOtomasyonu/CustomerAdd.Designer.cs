@@ -176,11 +176,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnclose.Location = new System.Drawing.Point(203, 248);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 25);
             this.btnclose.TabIndex = 15;
             this.btnclose.Text = "İptal";
+            this.btnclose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -191,11 +194,14 @@ namespace ArabaKiralamaOtomasyonu
             this.btnadd.FlatAppearance.BorderSize = 0;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.ForeColor = System.Drawing.Color.White;
+            this.btnadd.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.Image")));
+            this.btnadd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnadd.Location = new System.Drawing.Point(135, 248);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(50, 25);
+            this.btnadd.Size = new System.Drawing.Size(55, 25);
             this.btnadd.TabIndex = 14;
             this.btnadd.Text = "Ekle";
+            this.btnadd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.button1_Click);
             // 

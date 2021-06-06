@@ -268,11 +268,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(380, 175);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(390, 175);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(43, 31);
+            this.button2.Size = new System.Drawing.Size(53, 31);
             this.button2.TabIndex = 26;
             this.button2.Text = "Ekle";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -284,11 +287,14 @@ namespace ArabaKiralamaOtomasyonu
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(423, 109);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 46);
+            this.button1.Size = new System.Drawing.Size(62, 42);
             this.button1.TabIndex = 25;
             this.button1.Text = "Hesapla";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -325,11 +331,14 @@ namespace ArabaKiralamaOtomasyonu
             this.updatedBtn.FlatAppearance.BorderSize = 0;
             this.updatedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updatedBtn.ForeColor = System.Drawing.Color.White;
+            this.updatedBtn.Image = ((System.Drawing.Image)(resources.GetObject("updatedBtn.Image")));
+            this.updatedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.updatedBtn.Location = new System.Drawing.Point(304, 175);
             this.updatedBtn.Name = "updatedBtn";
-            this.updatedBtn.Size = new System.Drawing.Size(70, 31);
+            this.updatedBtn.Size = new System.Drawing.Size(80, 31);
             this.updatedBtn.TabIndex = 4;
             this.updatedBtn.Text = " Güncelle";
+            this.updatedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updatedBtn.UseVisualStyleBackColor = false;
             this.updatedBtn.Click += new System.EventHandler(this.updatedBtn_Click);
             // 
@@ -374,11 +383,14 @@ namespace ArabaKiralamaOtomasyonu
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(262, 175);
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteBtn.Location = new System.Drawing.Point(255, 175);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(36, 31);
+            this.deleteBtn.Size = new System.Drawing.Size(43, 31);
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "Sil";
+            this.deleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
@@ -529,11 +541,14 @@ namespace ArabaKiralamaOtomasyonu
             this.carReturnBtn.FlatAppearance.BorderSize = 0;
             this.carReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carReturnBtn.ForeColor = System.Drawing.Color.White;
+            this.carReturnBtn.Image = ((System.Drawing.Image)(resources.GetObject("carReturnBtn.Image")));
+            this.carReturnBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.carReturnBtn.Location = new System.Drawing.Point(659, 495);
             this.carReturnBtn.Name = "carReturnBtn";
             this.carReturnBtn.Size = new System.Drawing.Size(92, 31);
             this.carReturnBtn.TabIndex = 22;
             this.carReturnBtn.Text = "Araç Teslim";
+            this.carReturnBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.carReturnBtn.UseVisualStyleBackColor = false;
             this.carReturnBtn.Click += new System.EventHandler(this.carReturnBtn_Click);
             // 
